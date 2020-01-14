@@ -1,0 +1,35 @@
+@import '../../config/settings.scss';
+@import '../../config/colors.scss';
+
+.root{
+  padding:40px 0;
+  //background-color: color(grey, grey3);
+  .headline{
+    margin-top:0;
+    text-align: center;
+    font-size:settings(fontSize,lg);
+    color: color(main,secondary);
+  }
+  .item{
+    text-align: center;
+    padding:20px 0 0 10px;
+    border-radius: settings(defaults, borderRadius);
+    border: 1px solid color(grey, grey8);
+    .itemHeadline{
+      margin:0;
+      font-size: settings(fontSize,md);
+      color:white;
+      line-height: 1;
+    }
+    .itemContent{
+      color:white;
+      a{
+        color:white!important;
+        font-weight: settings(fontWeight, bold);
+      }
+      p{
+        margin-top:4px;
+      }
+    }
+  }
+}

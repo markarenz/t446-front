@@ -1,0 +1,42 @@
+$settings: (
+  //Based on 18px = 1REM
+    fontSize:
+    (
+      default: 1rem,
+      sm: 0.9rem,
+      md-df: 1.25rem,
+      md: 1.5rem,
+      lg: 2rem,
+      xl: 3rem,
+      xxl: 5rem
+    ),
+  fontWeight: (
+    bold: 700,
+    normal: 400,
+    light: 100
+  ),
+  defaults: (
+    standard: 50px,
+    borderWidth: 6px,
+    borderRadius: 4px
+  )
+);
+/* FONT-FAMILY */
+$font-family-default: "Work Sans", Helvetica, sans;
+$font-family-headline: "Roboto Slab", Helvetica, sans;
+
+/* MIXIN */
+@function settings($folder, $value) {
+  @warn map-get($settings,$folder);
+  @if map-has-key($settings, $folder) {
+    $folder: map-get($settings, $folder);
+    @if map-has-key($folder, $value) {
+      $value: map-get($folder, $value);
+      @return $value;
+    }
+    @warn "unknown value `#{$value}` in folder";
+    @return null;
+  }
+  @warn "unknown folder `#{$folder}` in settings";
+  @return null;
+}

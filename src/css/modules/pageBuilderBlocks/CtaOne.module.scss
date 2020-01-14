@@ -1,0 +1,27 @@
+@import '../../config/settings.scss';
+@import '../../config/colors.scss';
+
+.root{
+  background-color: color(main, secondary);
+  color: color(main, background);
+  text-align:center;
+  padding:40px 0;
+
+  h2{
+    display:inline-block;
+    margin:0;
+    font-size: settings(fontSize, xl);
+    line-height:1.2;
+    border-top:settings(defaults, borderWidth) solid color(main,background);
+    border-bottom:settings(defaults, borderWidth) solid color(main,background);
+  }
+  .ctaText{
+    font-size: settings(fontSize, md);
+    line-height:1.2;
+    font-style:italic;
+  }
+  .btn{
+    color: color(main, background);
+    border-color: color(main, background);
+  }
+}

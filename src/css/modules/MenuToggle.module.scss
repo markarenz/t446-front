@@ -1,0 +1,28 @@
+.root{
+  position:relative;
+  .line1{
+    transform: rotate(0deg) translate(0, 0);
+    transition:.25s transform ease;
+  }
+  .line2{
+    opacity:1;
+    transition:.25s opacity ease;
+  }
+  .line3{
+    transform: rotate(0deg) translate(0, 0);
+    transition:.25s transform ease;
+  }
+  &.active{
+    .line1{
+      transform: rotate(45deg) translate(6px, -4px);
+    }
+    .line2{
+      opacity:0;
+    }
+    .line3{
+      transform: rotate(-45deg) translate(-16px,-3px);
+    }
+  }
+
+}
+

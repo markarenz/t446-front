@@ -1,0 +1,25 @@
+.anim-me{
+  opacity:0;
+  transition:.3s all ease-out;
+  &.anim-from-left{
+    transform: translateX(-50px);
+    &.anim-in{
+      transform: translateX(0);
+    }
+  }
+  &.anim-from-right{
+    transform: translateX(50px);
+    &.anim-in{
+      transform: translateX(0);
+    }
+  }
+  &.anim-zoom-back{
+    transform: scale(1.3);
+    &.anim-in{
+      transform: scale(1.0);
+    }
+  }
+  &.anim-in{
+    opacity:1;
+  }
+}

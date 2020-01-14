@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:700|Work+Sans:400,700&display=swap");
+
+@import "./config/colors.scss";
+@import "./config/settings.scss";
+@import "./global-includes/animations.scss";
+
+/* GLOBAL STYLES */
+html{
+  font-size: 20px;
+}
+* {
+  font-family: $font-family-default;
+}
+body {
+  background-color: color(main,background) !important;
+  font-family: $font-family-default;
+  color: white;
+}
+h1,
+h2,
+h3 {
+  font-family: $font-family-headline;
+  font-weight: settings(fontWeight, bold);
+}
+a {
+  text-decoration: none;
+}
+
+
+/* Grow Link */
+.growLink{
+  transform: scale(1);
+  transition: .3s transform ease!important;
+  &:hover{
+    transform: scale(1.15);
+  }
+}
+
+.containerNarrow{
+  width:100%;
+  max-width:700px;
+  margin:0 auto;
+  display:block;
+}
+
+
+/* spacing */
+.py-standard{
+  padding-top: settings(spacing,standard);
+  padding-bottom: settings(spacing,standard);
+}
+.py-3{
+  padding-top:30px;
+  padding-bottom:30px;
+}
+.my-2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.mb-2{
+  margin-bottom: 20px;
+}
+.mb-3{
+  margin-bottom: 30px;
+}
+
+.y-space{
+  margin: 40px;
+}
+
+.v-center{
+  display:flex;
+  align-items: center;
+}
+
+.text-color-dark{
+  color:color(main,background);
+}
+
+.text-color-primary{
+  color:color(main,primary);
+}
+
+.text-color-secondary{
+  color:color(main,secondary);
+}
+
+.default-text{
+  font-size:settings(fontSize, default);
+  color:white;
+  line-height:1.4;
+}
+
+.responsive-img{
+  width:100%;
+  height:auto;
+}
+
+#page{
+  min-height: 80vh;
+}
+
+.btn-white{
+  border-color:white!important;
+  color:white!important;
+}

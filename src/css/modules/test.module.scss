@@ -1,0 +1,8 @@
+@import '../config/colors.scss';
+@import '../config/settings.scss';
+
+.homeHeader {
+  color:white;
+  background-color: color(blue, dark);
+  font-size: settings(fontSize, sm);
+}

@@ -1,0 +1,33 @@
+$palettes: (
+        main: (
+                primary: #d04554, //BSA RED: CE1126 lightened
+                secondary: #FFCC00,
+                background: #333333,
+        ),
+        grey: (
+                grey2: #333333,
+                grey3: #444444,
+                grey4: #666666,
+                grey6: #999999,
+                grey7: #b3b3b3,
+                grey8: #cccccc,
+                grey9: #e6e6e6,
+        ),
+);
+
+/* MIXIN */
+@function color($color,$tone){
+        @warn map-get($palettes,$color);
+        @if map-has-key($palettes,$color){
+                $color: map-get($palettes,$color);
+                @if map-has-key($color,$tone){
+                        $tone: map-get($color,$tone);
+                        @return $tone;
+                }
+                @warn "unknown tone `#{$tone}` in color";
+                @return null;
+        }
+        @warn "unknown color `#{$color}` in palette";
+        @return null;
+}
+

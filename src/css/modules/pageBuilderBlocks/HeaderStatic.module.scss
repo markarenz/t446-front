@@ -1,0 +1,36 @@
+@import '../../config/settings.scss';
+@import '../../config/colors.scss';
+
+.root{
+  position:relative;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  padding:250px 0 150px 0;
+  border-bottom:4px solid color(main,primary);
+  box-shadow:0 0 30px rgba(0,0,0,.5);
+  &:before{
+    content: " ";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:block;
+    background-color:rgba(0,0,0,.7);
+  }
+  .container{
+    position:relative;
+  }
+  h1{
+    display:inline-block;
+    margin:0;
+    padding-bottom:14px;
+    font-size:settings(fontSize,xl);
+    color:color(main,secondary);
+    border-bottom:settings(defaults,borderWidth) solid color(main,secondary);
+  }
+  h2{
+    color:white;
+  }
+}

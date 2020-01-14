@@ -1,0 +1,61 @@
+@import '../config/colors.scss';
+@import '../config/settings.scss';
+
+.root{
+  position:fixed;
+  z-index:2;
+  width:100%;
+  top:0;left:0;
+  color:white;
+  font-size: settings(fontSize, md);
+  background-color:transparent;
+  transition: .3s background-color ease;
+  .loginBtn{
+    margin:10px 0;
+    padding:0;
+    background-color:rgba(0,0,0,.25);
+    color:color(grey,darker);
+  }
+}
+
+.headerContainer{
+  display:flex;
+  justify-content: space-between;
+}
+
+.logoWrap{
+  position:relative;
+  .logo{
+    position:absolute;
+    top:10px;
+    left: calc(50% - 75px);
+    width:150px;
+    height:auto;
+    transform:scale(1);
+    transition:.3s all ease;
+    background-color: transparent;
+    &:hover{
+      transform:scale(1.1);
+    }
+  }
+}
+.menuToggleWrap{
+
+}
+
+.isScrolled{
+  .logo{
+    width:120px;
+    top:5px;
+    left: calc(50% - 60px);
+    background-color:rgba(0,0,0,.5);
+    //border-radius:50%;
+    padding:10px;
+  }
+  .menuToggleWrap{
+    background-color:rgba(0,0,0,.5);
+  }
+  .loginBtn{
+    background-color:rgba(0,0,0,.5);
+  }
+}

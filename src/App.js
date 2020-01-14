@@ -1,0 +1,95 @@
+import React from "react";
+import "./css/app.scss";
+import { CssBaseline, ThemeProvider } from "@material-ui/core";
+import ScrollToTop from "./components/common/ScrollToTop";
+
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
+import MainMenu from "./components/common/MainMenu";
+import TopModal from "./components/common/TopModal";
+
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import PageBuilderPage from "./components/PageBuilderPage";
+import Demo from "./components/Demo";
+
+import theme from "./css/mui-theme";
+
+function App() {
+  const [settings, setSettings] = React.useState([]);
+  const [alerts, setAlerts] = React.useState([]);
+  const [galleries, setGalleries] = React.useState([]);
+  const [pages, setPages] = React.useState([]);
+  const [topModalActive, setTopModalActive] = React.useState(false);
+  const [topModalContent, setTopModalContent] = React.useState("");
+  const [menuActive, setMenuActive] = React.useState(false);
+  const handleToggleMenu = () => {
+    setMenuActive(!menuActive);
+  };
+  React.useEffect(() => {
+    fetch(process.env.REACT_APP__AWS__BASE_DIR + "data/settings.json")
+      .then(res => res.json())
+      .then(data => {
+        setSettings(data);
+      });
+    fetch(process.env.REACT_APP__AWS__BASE_DIR + "data/pages.json")
+      .then(res => res.json())
+      .then(data => {
+        setPages(data);
+      });
+    fetch(process.env.REACT_APP__AWS__BASE_DIR + "data/alerts.json")
+      .then(res => res.json())
+      .then(data => {
+        setAlerts(data);
+      });
+    fetch(process.env.REACT_APP__AWS__BASE_DIR + "data/galleries.json")
+      .then(res => res.json())
+      .then(data => {
+        setGalleries(data);
+      });
+  }, []);
+  return (
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <CssBaseline />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Header
+            settings={settings}
+            handleToggleMenu={handleToggleMenu}
+            menuActive={menuActive}
+          />
+          <Switch>
+            <Route exact path="/demo" component={Demo} />
+            <Route
+              path="/*"
+              render={() => (
+                <PageBuilderPage
+                  pages={pages}
+                  alerts={alerts}
+                  galleries={galleries}
+                  settings={settings}
+                  setTopModalActive={setTopModalActive}
+                  setTopModalContent={setTopModalContent}
+                />
+              )}
+            />
+          </Switch>
+          <Footer />
+          <MainMenu
+            settings={settings}
+            menuActive={menuActive}
+            setMenuActive={setMenuActive}
+          />
+          {topModalActive && (
+            <TopModal
+              setTopModalActive={setTopModalActive}
+              topModalContent={topModalContent}
+            />
+          )}
+        </BrowserRouter>
+      </div>
+    </ThemeProvider>
+  );
+}
+
+export default App;

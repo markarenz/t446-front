@@ -1,0 +1,100 @@
+@import '../config/colors.scss';
+@import '../config/settings.scss';
+
+.root{
+  box-shadow: 0 0 30px rgba(0,0,0,.6);
+  background-color: color(grey,darker);
+  background-image: url(/img/footer-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top:4px solid color(main,primary);
+  color:white;
+  padding:0;
+  position:relative;
+  .locator{
+    font-size:settings(fontSize,md-df);
+    a{
+      color:white;
+      font-weight:bold;
+      text-decoration:none;
+    }
+  }
+  .copyright{
+    text-align:center;
+    padding:20px 0;
+    color: color(grey,light);
+  }
+  .footerCol{
+    padding:30px 20px;
+    text-align:center;
+    position:relative;
+  }
+  .fbLink{
+  }
+  .fbIcon{
+    color:white;
+    font-size:50px;
+  }
+  .scoutMessageWrap{
+    min-height:280px;
+  }
+  .scoutMessage{
+    font-style:italic;
+    font-family:$font-family-headline;
+    font-size:settings(fontSize, md);
+    padding:10px 0;
+    border-top:4px solid color(khaki,dark);
+    border-bottom:4px solid color(khaki,dark);
+    position:absolute;
+    top:50px;
+    left:0;
+    opacity:0;
+    transform:translateY(50px);
+    transition:.6s all ease;
+    &.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+    &.wasActive{
+      opacity:0;
+      transform:translateY(-50px);
+    }
+  }
+  .scoutMessageSmallerFont{
+    font-size:settings(fontSize, md-df);
+  }
+  .scoutMessageLargerFont{
+    font-size:settings(fontSize, lg);
+    padding:20px 0;
+  }
+  .logo{
+    max-width:200px;
+  }
+  h2{
+    margin:0;
+    font-size:settings(fontSize, lg);
+    color: color(red,light);
+  }
+  .mainRow{
+    //background-color: color(grey,darker);
+  }
+  .copyrightRow{
+    background-color: #111;
+    position:relative;
+  }
+  .btnContact{
+    background-color:color(khaki,dark);
+    color:white;
+    text-decoration:none;
+    &:hover{
+      color: color(grey,darkest);
+    }
+  }
+  .logoCouncil{
+    width:100%;
+    height:auto;
+    max-width:100px;
+    &:hover{
+    }
+  }
+}
