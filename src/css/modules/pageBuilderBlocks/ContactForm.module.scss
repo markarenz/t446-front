@@ -1,0 +1,14 @@
+.root{
+  background-image: url(/img/textures/texture-02.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  padding:70px 0;
+
+  color:white;
+  .formLabel{
+    display:block;
+  }
+  .formInput{
+    width:100%;
+  }
+}

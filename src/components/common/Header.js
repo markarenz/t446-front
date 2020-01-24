@@ -41,7 +41,7 @@ const Header = ({ settings, menuActive, handleToggleMenu }) => {
           <MenuToggle handleToggleMenu={handleToggleMenu} menuActive={menuActive} />
         </IconButton>
         <div className={styles.logoWrap}>
-          <Link to="/">
+          <Link to="/" onClick={() => {if (menuActive){handleToggleMenu()}}}>
             <img src={logoSrc} alt="Troop 446" className={styles.logo} />
           </Link>
         </div>

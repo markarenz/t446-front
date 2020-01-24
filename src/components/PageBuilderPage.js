@@ -12,10 +12,13 @@ import PullQuote from "./pageBuilderBlocks/PullQuote.pageblock";
 import CtaOne from "./pageBuilderBlocks/CtaOne.pageblock";
 import TwoColPhoto from "./pageBuilderBlocks/TwoColPhoto.pageblock";
 import Announcements from "./pageBuilderBlocks/Announcements.pageblock";
-import Calendar from "./pageBuilderBlocks/Calendar.pageblock";
+import CalendarMini from "./pageBuilderBlocks/CalendarMini.pageblock";
+import CalendarFull from "./pageBuilderBlocks/CalendarFull.pageblock";
 import Gallery from "./pageBuilderBlocks/Gallery.pagebloock";
 import HeaderSlider from "./pageBuilderBlocks/HeaderSlider.pageblock";
-
+import Spacer from "./pageBuilderBlocks/Spacer.pageblock";
+import GalleriesList from "./pageBuilderBlocks/GalleriesList.pagebloock";
+import ContactForm from "./pageBuilderBlocks/ContactForm";
 const _ = require("lodash");
 
 const PageBuilderPage = ({
@@ -35,7 +38,7 @@ const PageBuilderPage = ({
     slug: "404",
     status: 1,
     content:
-      '[{ "type": "page-header-orange", "id": "", "title": "", "class": "", "headline": "Four Oh Four", "subhead": "Content Not Found", "photo": "mms-page-headers-03.jpg"},{ "type": "1-col-dark", "id": "text-1", "title": "Text 1", "class": "", "html": "<h2>The content you are looking for cannot be found here.</h2><h3>Using the back button is probably your best bet.</h3>"}, { "type": "cta-1", "id": "cta-1", "title": "CTA 1", "class": "", "headline": "Do Not Miss Out", "subhead": "Keep up to date with the latest project updates and industry news.", "photo": "cta-bg.jpg", "buttonLabel": "Learn More", "buttonLink": "/blog"}]'
+      '[{"type":"header-static","id":"","class":"","headline":"404","subheadline":"Page not found","photo":"t446-header-eagles-01.jpg"},{"type":"spacer","id":"","class":"","spaces":"1"},{"type":"1-col","id":"","class":"text-center","html":"<h2>Your content was not found at this URL. Please return to the homepage and try again or use the menu to navigate to the desired content.</h2>"},{"type":"spacer","id":"","class":"","spaces":"1"}]'
   };
   const foundPageObj = _.find(pages, { slug: slug });
   const pageObj = foundPageObj ? foundPageObj : unfoundPageObj;
@@ -57,8 +60,21 @@ const PageBuilderPage = ({
           return <TwoColPhoto key={i} block={block} />;
         case "announcements":
           return <Announcements key={i} block={block} alerts={alerts} />;
+        case "contact-form":
+          return <ContactForm key={i} />;
         case "calendar":
-          return <Calendar key={i} block={block} />;
+          if (block.num_show > 0) return <CalendarMini key={i} block={block} />;
+          return <CalendarFull key={i} block={block} />;
+        case "galleries-list":
+          return (
+            <GalleriesList
+              key={i}
+              block={block}
+              galleries={galleries}
+              setTopModalActive={setTopModalActive}
+              setTopModalContent={setTopModalContent}
+            />
+          );
         case "header-slider":
           return (
             <HeaderSlider
@@ -77,6 +93,8 @@ const PageBuilderPage = ({
               setTopModalContent={setTopModalContent}
             />
           );
+        case "spacer":
+          return <Spacer key={i} block={block} />;
         default:
           return <BlockNotFound key={i} block={block} />;
       }

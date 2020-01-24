@@ -11,7 +11,6 @@ const Announcements = props => {
   return (
     <div id={block.id} className={`${css.root} ${block.class}`}>
       <Container>
-        <h2 className={css.headline}>Announcements</h2>
         <Grid container spacing={3}>
           {alerts.map((item, idx) => {
             if (block.num_show > 0 && num_shown > block.num_show - 1)

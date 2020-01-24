@@ -28,7 +28,7 @@
   .logo{
     position:absolute;
     top:10px;
-    left: calc(50% - 75px);
+    left: calc(50% - 65px);
     width:150px;
     height:auto;
     transform:scale(1);
@@ -40,20 +40,20 @@
   }
 }
 .menuToggleWrap{
-
+  background-color:rgba(0,0,0,.25)!important;
 }
 
 .isScrolled{
   .logo{
     width:120px;
     top:5px;
-    left: calc(50% - 60px);
+    left: calc(50% - 50px);
     background-color:rgba(0,0,0,.5);
     //border-radius:50%;
     padding:10px;
   }
   .menuToggleWrap{
-    background-color:rgba(0,0,0,.5);
+    background-color:rgba(0,0,0,.5)!important;
   }
   .loginBtn{
     background-color:rgba(0,0,0,.5);

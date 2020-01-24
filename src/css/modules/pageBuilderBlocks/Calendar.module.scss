@@ -1,18 +1,63 @@
 @import '../../config/settings.scss';
 @import '../../config/colors.scss';
 
-.root{
+.rootFull{
+  .calNav{
+    color:white;
+    font-size:settings(fontSize,lg);
+    .calNavBtn{
+      color:white;
+      font-size:settings(fontSize,lg);
+    }
+  }
+  .callHeaderCell{
+    color:white;
+  }
+  .calTable{
+    color:white;
+  }
+  .itemTitle{
+    color:white;
+  }
+  .calMonthLabel{
+    font-family: $font-family-headline;
+    font-size: settings(fontSize,lg);
+    @media (max-width:768px){
+      font-size: settings(fontSize,md);
+    }
+  }
+  .calCell{
+    height:150px;
+    color:white;
+    vertical-align: top;
+    width:14.286%;
+  }
+  .calCellEmpty{
+    opacity:0;
+  }
+}
+
+.rootMini{
+  background-image: url(/img/textures/texture-01.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  padding:70px 0;
+
   .headline{
     margin-top:0;
+    line-height: 1;
     text-align: center;
     font-size:settings(fontSize,lg);
     color: color(main,secondary);
   }
   .itemTitle{
     color:white;
+    padding: 0;
+    margin: 0 0 6px 0;
   }
   .itemDesc{
     color:white;
+    padding: 0;
+    margin: 0;
   }
-
 }

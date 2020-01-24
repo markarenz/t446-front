@@ -1,5 +1,4 @@
 import React from "react";
-import { Close as IconClose } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import css from "../../css/modules/MainMenu.module.scss";
 
@@ -9,16 +8,29 @@ const MainMenu = ({ settings, menuActive, setMenuActive }) => {
   const menuItemsDisp = menuData.map((item, idx) => {
     const menuItem = (
       <div>
-        <Link
-          to={item.link}
-          onClick={() => setMenuActive(false)}
-          className={`${css.menuItem} ${(item.children) && css.menuItemHasChildren}`}
-          style={{
-            transitionDelay: `${idx * 0.1 + 0.25}s`
-          }}
-        >
-          {item.label}
-        </Link>
+        {item.link ? (
+          <Link
+            to={item.link}
+            onClick={() => setMenuActive(false)}
+            className={`${css.menuItem} ${item.children &&
+              css.menuItemHasChildren}`}
+            style={{
+              transitionDelay: `${idx * 0.1 + 0.25}s`
+            }}
+          >
+            {item.label}
+          </Link>
+        ) : (
+          <div
+            className={`${css.menuItem} ${item.children &&
+              css.menuItemHasChildren}`}
+            style={{
+              transitionDelay: `${idx * 0.1 + 0.25}s`
+            }}
+          >
+            {item.label}
+          </div>
+        )}
       </div>
     );
     const children = item.children
@@ -45,7 +57,6 @@ const MainMenu = ({ settings, menuActive, setMenuActive }) => {
   if (settings.length === 0) return null;
   return (
     <div className={`${css.root} ${menuActive && css.active}`}>
-      <IconClose />
       <div className={css.menuWrap}>{menuItemsDisp}</div>
     </div>
   );

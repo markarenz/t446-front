@@ -1,9 +1,12 @@
 import React from "react";
 import { Container } from "@material-ui/core";
-import css from "../../css/modules/pageBuilderBlocks/Announcements.module.scss";
+import css from "../../css/modules/pageBuilderBlocks/general.module.scss";
 const OneCol = props => {
   const block = props.block;
-  const colClass = "text-" + block.align;
+  if (!block.align) {
+    block.align = "left";
+  }
+  const colClass = "text-" + block.align + " text-editor-output default-text";
   const content = block.html
     .split("\n\n")
     .join("<br /><br />")

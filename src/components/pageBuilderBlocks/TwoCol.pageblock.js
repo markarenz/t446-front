@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Grid } from "@material-ui/core";
-import css from "../../css/modules/pageBuilderBlocks/Announcements.module.scss";
+import css from "../../css/modules/pageBuilderBlocks/general.module.scss";
 import VizSensor from "react-visibility-sensor";
 
 const TwoCol = props => {
@@ -37,7 +37,7 @@ const TwoCol = props => {
               className={`anim-me anim-from-left ${isVisible && "anim-in"}`}
             >
               <div
-                className="default-text"
+                className="default-text text-editor-output"
                 dangerouslySetInnerHTML={{ __html: content1 }}
               />
             </Grid>
@@ -49,7 +49,7 @@ const TwoCol = props => {
               className={`anim-me anim-from-right ${isVisible && "anim-in"}`}
             >
               <div
-                className="default-text"
+                className="default-text text-editor-output"
                 dangerouslySetInnerHTML={{ __html: content2 }}
               />
             </Grid>

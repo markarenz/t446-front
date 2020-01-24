@@ -33,6 +33,23 @@ const overrides = {
             zIndex: 1,
         },
     },
+    MuiOutlinedInput: {
+        root: {
+            '&:not($disabled):not($focused):not($error) $notchedOutline': {
+                borderColor: 'white',
+                borderWidth: 1,
+                color: 'white',
+            },
+            '&:hover:not($disabled):not($focused):not($error) $notchedOutline': {
+                borderColor: 'white',
+                borderWidth: 1,
+                color: 'white',
+            },
+        },
+        input: {
+            color: 'white',
+        }
+    },
 };
 
 const themeName = 'T446 v1';

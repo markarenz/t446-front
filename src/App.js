@@ -10,9 +10,9 @@ import TopModal from "./components/common/TopModal";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import PageBuilderPage from "./components/PageBuilderPage";
-import Demo from "./components/Demo";
 
 import theme from "./css/mui-theme";
+import GalleryDetailPage from "./components/GalleryDetailPage";
 
 function App() {
   const [settings, setSettings] = React.useState([]);
@@ -24,6 +24,8 @@ function App() {
   const [menuActive, setMenuActive] = React.useState(false);
   const handleToggleMenu = () => {
     setMenuActive(!menuActive);
+    // scroll menu to top
+    // window.scrollTo(0, 0);
   };
   React.useEffect(() => {
     fetch(process.env.REACT_APP__AWS__BASE_DIR + "data/settings.json")
@@ -59,7 +61,17 @@ function App() {
             menuActive={menuActive}
           />
           <Switch>
-            <Route exact path="/demo" component={Demo} />
+            <Route
+                path="/gallery/:slug"
+                render={() => (
+                    <GalleryDetailPage
+                        galleries={galleries}
+                        settings={settings}
+                        setTopModalActive={setTopModalActive}
+                        setTopModalContent={setTopModalContent}
+                    />
+                )}
+            />
             <Route
               path="/*"
               render={() => (

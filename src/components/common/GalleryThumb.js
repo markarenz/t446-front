@@ -1,7 +1,6 @@
 import React from "react";
 import VizSensor from "react-visibility-sensor";
 import css from "../../css/modules/pageBuilderBlocks/Gallery.module.scss";
-import { Grid } from "@material-ui/core";
 
 const GalleryThumb = ({ img, idx, handleImageCllick }) => {
   const [isVisible, setIsVisible] = React.useState(false);
