@@ -138,7 +138,7 @@ class CalendarFull extends React.Component {
                 {weeks.map((wk, widx) => {
                   // don't render an empty week
                   const thisDay = calCursor - monthStartDay;
-                  if (thisDay > numDaysInMonth){
+                  if (thisDay >= numDaysInMonth){
                     return null;
                   }
                   return (
@@ -150,12 +150,12 @@ class CalendarFull extends React.Component {
                           return (
                             <TableCell
                               className={css.calCellEmpty}
-                              key={idx}
+                              key={`td-empty-${idx}`}
                             ></TableCell>
                           );
                         }
                         return (
-                          <TableCell className={css.calCell} key={idx}>
+                          <TableCell className={css.calCell} key={thisDay}>
                             <div>{thisDay}</div>
                             {filteredEvents
                                 .filter(evt => {
@@ -174,7 +174,7 @@ class CalendarFull extends React.Component {
                                   return false;
                                 })
                                 .map((evt, ix) => (
-                                    <div key={idx}>
+                                    <div key={`evt-${ix}`}>
                                       @{moment(evt.start).format("h:mm A")}<br />
                                       {evt.title}<br />
                                     </div>

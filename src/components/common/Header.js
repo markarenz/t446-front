@@ -49,7 +49,7 @@ const Header = ({ settings, menuActive, handleToggleMenu }) => {
           variant="outlined"
           size="small"
           color="secondary"
-          className={styles.loginBtn}
+          className={`${styles.loginBtn} growLink`}
           href={process.env.REACT_APP__SCOUTBOOK_LOGIN_URL}
           target="_blank"
           rel="noreferrer noopener"

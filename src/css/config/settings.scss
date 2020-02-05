@@ -27,7 +27,6 @@ $font-family-headline: "Roboto Slab", Helvetica, sans;
 
 /* MIXIN */
 @function settings($folder, $value) {
-  @warn map-get($settings,$folder);
   @if map-has-key($settings, $folder) {
     $folder: map-get($settings, $folder);
     @if map-has-key($folder, $value) {

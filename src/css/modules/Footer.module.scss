@@ -3,7 +3,7 @@
 
 .root{
   box-shadow: 0 0 30px rgba(0,0,0,.6);
-  background-color: color(grey,darker);
+  background-color: color(grey,grey2);
   background-image: url(/img/footer-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +22,7 @@
   .copyright{
     text-align:center;
     padding:20px 0;
-    color: color(grey,light);
+    color: color(grey,grey7);
   }
   .footerCol{
     padding:30px 20px;
@@ -43,8 +43,8 @@
     font-family:$font-family-headline;
     font-size:settings(fontSize, md);
     padding:10px 0;
-    border-top:4px solid color(khaki,dark);
-    border-bottom:4px solid color(khaki,dark);
+    border-top:4px solid white;
+    border-bottom:4px solid white;
     position:absolute;
     top:50px;
     left:0;
@@ -73,21 +73,20 @@
   h2{
     margin:0;
     font-size:settings(fontSize, lg);
-    color: color(red,light);
+    color: color(main,secondary);
   }
   .mainRow{
-    //background-color: color(grey,darker);
+    //background-color: color(grey,grey);
   }
   .copyrightRow{
     background-color: #111;
     position:relative;
   }
   .btnContact{
-    background-color:color(khaki,dark);
     color:white;
     text-decoration:none;
     &:hover{
-      color: color(grey,darkest);
+      color: color(grey,grey2);
     }
   }
   .logoCouncil{

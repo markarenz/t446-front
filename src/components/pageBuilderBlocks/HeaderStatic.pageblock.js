@@ -7,7 +7,6 @@ import VizSensor from "react-visibility-sensor";
 const HeaderStatic = props => {
   const [isVisible, setIsVisible] = React.useState(false);
   const block = props.block;
-  console.log(block);
   return (
     <div
       id={block.id}

@@ -7,7 +7,6 @@ const Breadcrumbs = ({ location })  => {
     const breadcrumbs = pathBits.map( (item, i) => {
         return (item==="") ? <Link to="/">Home</Link> : <Link to={`/${item}`}>{item}</Link>
     });
-    console.log('???', pathBits);
     return (
         <div>
             {breadcrumbs}

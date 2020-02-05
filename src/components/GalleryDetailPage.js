@@ -19,8 +19,6 @@ const GalleryDetailPage = ({
 }) => {
   const slug = location.pathname.replace(/^\/+/, "");
   const gallery = _.find(galleries, { slug: slug.replace("gallery/", "") });
-  console.log(galleries);
-  console.log("??gallery loading??", gallery, slug);
   if (!gallery || !gallery.title) {
     return <h1>OH NO!</h1>;
   }
@@ -33,7 +31,6 @@ const GalleryDetailPage = ({
     status: 1,
     images: JSON.stringify(images)
   };
-  console.log("??gallery loading??");
   const headerStaticBlock = {
     type: "header-static",
     id: "",
