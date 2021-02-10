@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import HelmetDisp from "./common/HelmetDisp";
 import { PropTypes } from "prop-types";
@@ -29,8 +29,14 @@ const PageBuilderPage = ({
   setTopModalActive,
   setTopModalContent
 }) => {
+  // useEffect(() => {
+  //   const description = document.querySelector('meta[name="description"]');
+  //   if (description) {
+  //     description.remove();
+  //   }
+  // });
   const slug =
-    location.pathname === "/" ? "home" : location.pathname.replace(/^\/+/, "");
+    location.pathname === "/" ? "home" : location.pathname.replace(/^\/+/, "").replace(/\/$/, "");
   const defaultImage = "";
   const unfoundPageObj = {
     title: "404: Content Not Found",
