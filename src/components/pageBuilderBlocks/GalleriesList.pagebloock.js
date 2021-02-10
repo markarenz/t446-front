@@ -27,7 +27,8 @@ const GalleriesList = ({
     <div id={block.id} className={`${css.galleryList} ${block.class}`}>
       <Container>
         <Grid container spacing={3} className="grid-center">
-          {filteredGalleries.slice((curPage * itemsPerPage), (curPage * itemsPerPage + itemsPerPage))
+          {filteredGalleries.sort((a, b) => { if (a.pub_date > b.pub_date) { return -1; } if (a.pub_date < b.pub_date) { return 1; } return 0; })
+              .slice((curPage * itemsPerPage), (curPage * itemsPerPage + itemsPerPage))
               .map((gallery, idx) => {
                 const images = JSON.parse(gallery.images);
                 const main_image = images[0];
