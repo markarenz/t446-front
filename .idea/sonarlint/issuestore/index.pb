@@ -104,3 +104,5 @@ U
 %src/components/common/GalleryThumb.js,9/2/92b9a243e669cc735a0d4258761ddc2b6439aa10
 j
 :src/components/pageBuilderBlocks/CalendarMini.pageblock.js,0/b/0bf976e83c68ea6c514c8dddb6a46b3277288612
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
