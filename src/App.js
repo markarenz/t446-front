@@ -2,7 +2,7 @@ import React from "react";
 import "./css/app.scss";
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import ScrollToTop from "./components/common/ScrollToTop";
-
+import Analytics from 'react-router-ga';
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import MainMenu from "./components/common/MainMenu";
@@ -54,6 +54,7 @@ function App() {
       <div className="App">
         <CssBaseline />
         <BrowserRouter>
+          <Analytics id="UA-166019119-1" debug>
           <ScrollToTop />
           <Header
             settings={settings}
@@ -98,6 +99,7 @@ function App() {
               topModalContent={topModalContent}
             />
           )}
+          </Analytics>
         </BrowserRouter>
       </div>
     </ThemeProvider>
