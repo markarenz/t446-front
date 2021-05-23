@@ -102,3 +102,5 @@ W
 'src/css/global-includes/animations.scss,5/3/5364f34afcf39e39a31924c852ca806f4a6b0084
 U
 %src/components/common/GalleryThumb.js,9/2/92b9a243e669cc735a0d4258761ddc2b6439aa10
+j
+:src/components/pageBuilderBlocks/CalendarMini.pageblock.js,0/b/0bf976e83c68ea6c514c8dddb6a46b3277288612
