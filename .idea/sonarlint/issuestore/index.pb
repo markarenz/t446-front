@@ -90,8 +90,6 @@ Q
 !src/components/common/TopModal.js,e/8/e87932d45aa708cf5f452f66a485916618a7f702
 T
 $src/css/modules/TopModal.module.scss,9/9/995833ecdecf6064e13d6560c31d148281594ab4
-f
-6src/components/pageBuilderBlocks/Calendar.pageblock.js,6/7/672429f02ab3c11a9c6f15d7ad26ebdc4c509f0e
 k
 ;src/components/pageBuilderBlocks/Announcements.pageblock.js,4/2/4287f06ba304c4f1b32523ad7fafec5d39d97adc
 f
@@ -104,3 +102,7 @@ W
 'src/css/global-includes/animations.scss,5/3/5364f34afcf39e39a31924c852ca806f4a6b0084
 U
 %src/components/common/GalleryThumb.js,9/2/92b9a243e669cc735a0d4258761ddc2b6439aa10
+j
+:src/components/pageBuilderBlocks/CalendarMini.pageblock.js,0/b/0bf976e83c68ea6c514c8dddb6a46b3277288612
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
