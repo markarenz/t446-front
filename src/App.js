@@ -2,15 +2,12 @@ import React from "react";
 import "./css/app.scss";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import ScrollToTop from "./components/common/ScrollToTop";
-// import Analytics from 'react-router-ga';
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import MainMenu from "./components/common/MainMenu";
 import TopModal from "./components/common/TopModal";
-
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PageBuilderPage from "./components/PageBuilderPage";
-
 import theme from "./css/mui-theme";
 import GalleryDetailPage from "./components/GalleryDetailPage";
 
@@ -61,32 +58,28 @@ function App() {
             handleToggleMenu={handleToggleMenu}
             menuActive={menuActive}
           />
-          <Switch>
+          <Routes>
             <Route
                 path="/gallery/:slug"
-                render={() => (
-                    <GalleryDetailPage
+                element={<GalleryDetailPage
                         galleries={galleries}
                         settings={settings}
                         setTopModalActive={setTopModalActive}
                         setTopModalContent={setTopModalContent}
-                    />
-                )}
+                    />}
             />
             <Route
               path="/*"
-              render={() => (
-                <PageBuilderPage
+              element={<PageBuilderPage
                   pages={pages}
                   alerts={alerts}
                   galleries={galleries}
                   settings={settings}
                   setTopModalActive={setTopModalActive}
                   setTopModalContent={setTopModalContent}
-                />
-              )}
+                />}
             />
-          </Switch>
+          </Routes>
           <Footer />
           <MainMenu
             settings={settings}

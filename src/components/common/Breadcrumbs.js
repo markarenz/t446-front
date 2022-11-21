@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Breadcrumbs = ({ location })  => {
     const pathBits = location.pathname.split('/');
@@ -18,4 +18,4 @@ Breadcrumbs.propTypes = {
         pathName: PropTypes.string
     }),
 };
-export default withRouter(Breadcrumbs);
+export default Breadcrumbs;

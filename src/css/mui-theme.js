@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles'
 
 const palette = {
     primary: { main: '#CE1126', contrastText: '#fff' },
@@ -54,4 +54,4 @@ const overrides = {
 
 const themeName = 'T446 v1';
 
-export default createMuiTheme({ overrides, palette, typography, themeName });
+export default createTheme({ overrides, palette, typography, themeName });
