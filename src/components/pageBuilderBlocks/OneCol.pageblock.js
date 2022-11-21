@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "@material-ui/core";
+import { Container } from "@mui/material";
 import css from "../../css/modules/pageBuilderBlocks/general.module.scss";
 const OneCol = props => {
   const block = props.block;

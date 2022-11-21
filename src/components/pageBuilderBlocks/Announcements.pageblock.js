@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Container } from "@material-ui/core";
+import { Grid, Container } from "@mui/material";
 import css from "../../css/modules/pageBuilderBlocks/Announcements.module.scss";
 
 const Announcements = props => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid } from "@mui/material";
 import css from "../../css/modules/pageBuilderBlocks/general.module.scss";
 import VizSensor from "react-visibility-sensor";
 

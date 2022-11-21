@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, IconButton, Button } from "@material-ui/core";
+import { Container, IconButton, Button } from "@mui/material";
 //import { directionsLink } from "../../config/data";
 import MenuToggle from "./MenuToggle";
 import styles from "../../css/modules/Header.module.scss";

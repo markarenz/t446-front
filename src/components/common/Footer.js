@@ -6,8 +6,8 @@ import {
   Typography,
   IconButton,
   Button
-} from "@material-ui/core";
-import { Facebook as IconFacebook } from "@material-ui/icons";
+} from "@mui/material";
+import { Facebook as IconFacebook } from "@mui/icons-material";
 import ScoutMessaging from "./ScoutMessaging";
 import { facebookLink } from "../../config/data";
 import styles from "../../css/modules/Footer.module.scss";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Button, OutlinedInput, InputLabel } from "@material-ui/core";
+import { Grid, Button, OutlinedInput, InputLabel } from "@mui/material";
 import css from "../../css/modules/pageBuilderBlocks/ContactForm.module.scss";
 
 export default class MyForm extends React.Component {

@@ -1,5 +1,5 @@
 import React from "react"
-import { Container } from '@material-ui/core'
+import { Container } from '@mui/material'
 import css from '../../css/modules/pageBuilderBlocks/PullQuote.module.scss';
 import VizSensor from "react-visibility-sensor";
 

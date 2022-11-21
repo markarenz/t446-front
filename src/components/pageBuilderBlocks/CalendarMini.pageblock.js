@@ -1,7 +1,7 @@
 import React from "react";
 import { getEvents } from "../../gcal";
 import moment from "moment";
-import { Container, Grid, Button } from "@material-ui/core";
+import { Container, Grid, Button } from "@mui/material";
 import { Link } from 'react-router-dom';
 import css from "../../css/modules/pageBuilderBlocks/Calendar.module.scss";
 function compareStartDates(a, b) {

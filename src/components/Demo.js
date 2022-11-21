@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Button, Typography } from "@material-ui/core";
+import { Container, Grid, Button, Typography } from "@mui/material";
 
 import stylesHeaderStatic from "../css/modules/pageBuilderBlocks/HeaderStatic.module.scss";
 import stylesCta from "../css/modules/pageBuilderBlocks/CtaOne.module.scss";

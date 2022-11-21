@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container } from "@material-ui/core";
+import { Button, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 import css from "../../css/modules/pageBuilderBlocks/CtaOne.module.scss";
 import VizSensor from "react-visibility-sensor";

@@ -1,7 +1,7 @@
 import React from "react";
 // import { Controller, Scene } from 'react-scrollmagic';
 import css from "../../css/modules/pageBuilderBlocks/HeaderStatic.module.scss";
-import { Container } from "@material-ui/core";
+import { Container } from "@mui/material";
 import VizSensor from "react-visibility-sensor";
 
 const HeaderStatic = props => {
