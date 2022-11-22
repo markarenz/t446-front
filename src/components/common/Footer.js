@@ -10,12 +10,13 @@ import {
 import { Facebook as IconFacebook } from "@mui/icons-material";
 import ScoutMessaging from "./ScoutMessaging";
 import { facebookLink } from "../../config/data";
+import footerBg from '../../images/footer-bg.jpg';
 import styles from "../../css/modules/Footer.module.scss";
-var logoSrc = require("../../images/logos/t446-white.svg");
+import logoSrc from '../../images/logos/t446-color.svg';
 
 const Footer = () => {
   return (
-    <footer className={styles.root}>
+    <footer className={styles.root} style={{ backgroundImage: `url(${footerBg})`}}>
       <div className={styles.mainRow}>
         <Container>
           <Grid container spacing={0}>

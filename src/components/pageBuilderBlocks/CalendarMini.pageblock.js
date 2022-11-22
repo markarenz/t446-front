@@ -4,6 +4,8 @@ import moment from "moment";
 import { Container, Grid, Button } from "@mui/material";
 import { Link } from 'react-router-dom';
 import css from "../../css/modules/pageBuilderBlocks/Calendar.module.scss";
+import texture from '../../images/textures/texture-01.jpg';
+
 function compareStartDates(a, b) {
   if (a.start < b.start) {
     return -1;
@@ -39,7 +41,7 @@ class CalendarMini extends React.Component {
     );
     const dateCutoffStamp = lastWeek.getTime();
     return (
-        <div id={block.id} className={`${css.rootMini} ${block.class}`}>
+        <div id={block.id} className={`${css.rootMini} ${block.class}`} style={{ backgroundImage: `url(${texture})`}}>
         <Container>
           <h1 className={css.headline}>Coming Up...</h1>
           <Grid container spacing={3}>

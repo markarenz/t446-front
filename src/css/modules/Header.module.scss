@@ -10,9 +10,16 @@
   font-size: settings(fontSize, md);
   background-color:transparent;
   transition: .3s background-color ease;
+  .headerRow {
+    margin-top:10px;
+    display:flex;
+    justify-content: space-between;
+    width:100%;  
+  }
   .loginBtn{
     margin:10px 0;
     padding:0;
+    height:max-content;
     background-color:rgba(0,0,0,.25);
     border-color:white;
     color:white;
@@ -30,9 +37,10 @@
 .logoWrap{
   position:relative;
   .logo{
-    position:absolute;
-    top:10px;
-    left: calc(50% - 65px);
+    // position:absolute;
+    // top:10px;
+    // left: calc(50% - 65px);
+    margin-top:10px;
     width:150px;
     height:auto;
     transform:scale(1);
@@ -45,6 +53,7 @@
 }
 .menuToggleWrap{
   background-color:rgba(0,0,0,.25)!important;
+  height:max-content;
 }
 
 .isScrolled{
