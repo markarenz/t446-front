@@ -1,4 +1,5 @@
 import React from "react";
+import ReactMarkdown from 'react-markdown';
 import { Button, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 import css from "../../css/modules/pageBuilderBlocks/CtaOne.module.scss";
@@ -30,10 +31,7 @@ const CtaOne = props => {
               className={`anim-me anim-from-right ${isVisible && "anim-in"}`}
               style={{ transitionDelay: "0.4s" }}
             >
-              <div
-                className={css.ctaText}
-                dangerouslySetInnerHTML={{ __html: block.text }}
-              />
+              <ReactMarkdown skipHtml className={css.ctaText}>{block.text}</ReactMarkdown>
             </div>
           </div>
           <div

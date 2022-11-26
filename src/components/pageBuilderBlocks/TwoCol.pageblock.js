@@ -1,4 +1,5 @@
 import React from "react";
+import ReactMarkdown from 'react-markdown';
 import { Container, Grid } from "@mui/material";
 import css from "../../css/modules/pageBuilderBlocks/general.module.scss";
 import VizSensor from "react-visibility-sensor";
@@ -6,16 +7,6 @@ import VizSensor from "react-visibility-sensor";
 const TwoCol = props => {
   const [isVisible, setIsVisible] = React.useState(false);
   const block = props.block;
-  const content1 = block.html1
-    .split("\n\n")
-    .join("<br /><br />")
-    .split("anim-me")
-    .join("");
-  const content2 = block.html2
-    .split("\n\n")
-    .join("<br /><br />")
-    .split("anim-me")
-    .join("");
   return (
     <VizSensor
       partialVisibility
@@ -36,10 +27,12 @@ const TwoCol = props => {
               md={6}
               className={`anim-me anim-from-left ${isVisible && "anim-in"}`}
             >
-              <div
+              <ReactMarkdown
+                skipHtml
                 className="default-text text-editor-output"
-                dangerouslySetInnerHTML={{ __html: content1 }}
-              />
+              >
+                {block.html1}
+              </ReactMarkdown>
             </Grid>
             <Grid
               item
@@ -48,10 +41,12 @@ const TwoCol = props => {
               md={6}
               className={`anim-me anim-from-right ${isVisible && "anim-in"}`}
             >
-              <div
+              <ReactMarkdown
+                skipHtml
                 className="default-text text-editor-output"
-                dangerouslySetInnerHTML={{ __html: content2 }}
-              />
+              >
+                {block.html2}
+              </ReactMarkdown>
             </Grid>
           </Grid>
         </Container>

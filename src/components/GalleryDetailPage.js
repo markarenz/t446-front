@@ -47,7 +47,7 @@ const GalleryDetailPage = ({
         <HelmetDisp
           title={gallery.title}
           description={`A gallery for "${gallery.title}"`}
-          date_modified={gallery.date_modified}
+          dateModified={gallery.dateModified}
           image={defaultImage}
           pubDate={gallery.pubDate}
         />

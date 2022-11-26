@@ -115,7 +115,7 @@ const PageBuilderPage = ({
           <HelmetDisp
             title={pageObj.title}
             description={pageObj.metadesc}
-            date_modified={pageObj.date_modified}
+            dateModified={pageObj.dateModified}
             image={defaultImage}
             pubDate={pageObj.pubDate}
           />
