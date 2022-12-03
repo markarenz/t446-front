@@ -1,27 +1,25 @@
 import React from "react";
-import { Container } from "@material-ui/core";
+import { Container } from "@mui/material";
 import css from "../../css/modules/pageBuilderBlocks/HeaderSlider.module.scss";
 import activityImg from "../../images/bsa-activity.svg";
 
 const HeaderSlider = ({ block, gallery }) => {
   const [initted, setInitted] = React.useState(false);
+  const images = gallery?.images ? JSON.parse(gallery.images) : [];
+  const headlines = block.headlines.split("\n");
   const changeSlide = () => {
     const nextSlide = activeSlide < images.length - 1 ? activeSlide + 1 : 0;
     setActiveSlide(nextSlide);
   };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   React.useEffect(() => {
     const timer = setTimeout(() => {
       changeSlide();
     }, 5000);
     setInitted(true);
     return () => clearTimeout(timer);
-  });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
   const [activeSlide, setActiveSlide] = React.useState(0);
-  if (!gallery) return null;
-  if (!gallery.images) return null;
-  const images = JSON.parse(gallery.images);
-  const headlines = block.headlines.split("\n");
   return (
     <div id={block.id} className={`${css.root} ${block.class}`}>
       {images.map((img, idx) => (

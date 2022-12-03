@@ -9,11 +9,11 @@ import {
   TableBody,
   TableRow,
   TableCell
-} from "@material-ui/core";
+} from "@mui/material";
 import {
   NavigateNext as IconNext,
   NavigateBefore as IconPrev
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import monthLabels from "../../data/monthLabels";
 import dayLabels from "../../data/dayLabels";
 import css from "../../css/modules/pageBuilderBlocks/Calendar.module.scss";

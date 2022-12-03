@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Container } from "@material-ui/core";
+import ReactMarkdown from 'react-markdown';
+import { Grid, Container } from "@mui/material";
 import css from "../../css/modules/pageBuilderBlocks/Announcements.module.scss";
 
 const Announcements = props => {
@@ -25,11 +26,11 @@ const Announcements = props => {
               <Grid item xs={12} key={idx}>
                 <div className={css.item}>
                   <h3 className={css.itemHeadline}>{item.title}</h3>
-
                   <div
-                    className={css.itemContent}
-                    dangerouslySetInnerHTML={{ __html: item.content }}
-                  />
+                    className={css.itemContent}                
+                  >
+                    <ReactMarkdown skipHtml>{item.content}</ReactMarkdown>
+                  </div>
                 </div>
               </Grid>
             );

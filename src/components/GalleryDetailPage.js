@@ -1,8 +1,9 @@
 import React from "react";
-import { Grid, Button } from '@material-ui/core';
-import { withRouter, Link } from "react-router-dom";
+import { Grid, Button } from '@mui/material';
+import { Link, useLocation } from "react-router-dom";
 import HelmetDisp from "./common/HelmetDisp";
 import { PropTypes } from "prop-types";
+import { usePageTracking } from "../utlilities/usePageTracking";
 
 // IMPORT BLOCKS
 import Gallery from "./pageBuilderBlocks/Gallery.pagebloock";
@@ -12,11 +13,12 @@ import Spacer from "./pageBuilderBlocks/Spacer.pageblock";
 const _ = require("lodash");
 
 const GalleryDetailPage = ({
-  location,
   galleries,
   setTopModalActive,
   setTopModalContent
 }) => {
+  const location = useLocation();
+  usePageTracking();
   const slug = location.pathname.replace(/^\/+/, "");
   const gallery = _.find(galleries, { slug: slug.replace("gallery/", "") });
   if (!gallery || !gallery.title) {
@@ -45,7 +47,7 @@ const GalleryDetailPage = ({
         <HelmetDisp
           title={gallery.title}
           description={`A gallery for "${gallery.title}"`}
-          date_modified={gallery.date_modified}
+          dateModified={gallery.dateModified}
           image={defaultImage}
           pubDate={gallery.pubDate}
         />
@@ -74,8 +76,8 @@ GalleryDetailPage.propTypes = {
     pathName: PropTypes.string
   }),
   settings: PropTypes.array.isRequired,
-  pages: PropTypes.array.isRequired,
-  alerts: PropTypes.array.isRequired,
-  galleries: PropTypes.array.isRequired
+  galleries: PropTypes.array.isRequired,
+  setTopModalActive: PropTypes.func,
+  setTopModalContent: PropTypes.func,
 };
-export default withRouter(GalleryDetailPage);
+export default GalleryDetailPage;

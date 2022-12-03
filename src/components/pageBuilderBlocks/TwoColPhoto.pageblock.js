@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Grid } from "@material-ui/core";
+import ReactMarkdown from 'react-markdown';
+import { Container, Grid } from "@mui/material";
 import css from "../../css/modules/pageBuilderBlocks/TwoColPhoto.module.scss";
 import VizSensor from "react-visibility-sensor";
 
@@ -30,10 +31,7 @@ const TwoColPhoto = props => {
               />
             </Grid>
             <Grid item xs={12} sm={6} className="v-center">
-              <div
-                className={`default-text ${css.textCol}`}
-                dangerouslySetInnerHTML={{ __html: block.html }}
-              />
+              <ReactMarkdown skipHtml className={`default-text ${css.textCol}`}>{block.html}</ReactMarkdown>
             </Grid>
           </Grid>
         </Container>

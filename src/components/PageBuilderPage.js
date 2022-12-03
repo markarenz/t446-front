@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
-import { withRouter } from "react-router-dom";
+import React from "react";
+import { useLocation } from 'react-router-dom';
 import HelmetDisp from "./common/HelmetDisp";
 import { PropTypes } from "prop-types";
+import { usePageTracking } from "../utlilities/usePageTracking";
 
 // IMPORT BLOCKS
 import BlockNotFound from "./pageBuilderBlocks/BlockNotFound.pageblock";
@@ -22,13 +23,14 @@ import ContactForm from "./pageBuilderBlocks/ContactForm";
 const _ = require("lodash");
 
 const PageBuilderPage = ({
-  location,
   pages,
   alerts,
   galleries,
   setTopModalActive,
   setTopModalContent
 }) => {
+  const location = useLocation();
+  usePageTracking();
   // useEffect(() => {
   //   const description = document.querySelector('meta[name="description"]');
   //   if (description) {
@@ -113,7 +115,7 @@ const PageBuilderPage = ({
           <HelmetDisp
             title={pageObj.title}
             description={pageObj.metadesc}
-            date_modified={pageObj.date_modified}
+            dateModified={pageObj.dateModified}
             image={defaultImage}
             pubDate={pageObj.pubDate}
           />
@@ -124,12 +126,9 @@ const PageBuilderPage = ({
   );
 };
 PageBuilderPage.propTypes = {
-  location: PropTypes.shape({
-    pathName: PropTypes.string
-  }),
   settings: PropTypes.array.isRequired,
   pages: PropTypes.array.isRequired,
   alerts: PropTypes.array.isRequired,
   galleries: PropTypes.array.isRequired
 };
-export default withRouter(PageBuilderPage);
+export default PageBuilderPage;

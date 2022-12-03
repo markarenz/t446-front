@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 
-const HelmetDisp = ({ title, description, image, date_modified }) => {
+const HelmetDisp = ({ title, description, image, dateModified }) => {
   const titleMain = title + " | " + process.env.REACT_APP__SITE_TITLE;
   return (
     <Helmet>
@@ -36,8 +36,8 @@ const HelmetDisp = ({ title, description, image, date_modified }) => {
       />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content="Swatchity.com" />
-      <meta property="article:published_time" content={date_modified} />
-      <meta property="article:modified_time" content={date_modified} />
+      <meta property="article:published_time" content={dateModified} />
+      <meta property="article:modified_time" content={dateModified} />
     </Helmet>
   );
 };
@@ -46,7 +46,7 @@ HelmetDisp.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  date_modified: PropTypes.string.isRequired
+  dateModified: PropTypes.string.isRequired
 };
 
 export default HelmetDisp;

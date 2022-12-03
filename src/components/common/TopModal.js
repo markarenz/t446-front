@@ -1,6 +1,6 @@
 import React from "react";
 import css from "../../css/modules/TopModal.module.scss";
-import { Close as IconClose } from "@material-ui/icons";
+import { Close as IconClose } from "@mui/icons-material";
 
 const TopModal = ({ setTopModalActive, topModalContent }) => {
   return (

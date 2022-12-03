@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, IconButton, Button } from "@material-ui/core";
+import { Container, IconButton, Button } from "@mui/material";
 //import { directionsLink } from "../../config/data";
 import MenuToggle from "./MenuToggle";
 import styles from "../../css/modules/Header.module.scss";
 import { PropTypes } from "prop-types";
-var logoSrc = require("../../images/logos/t446-color.svg");
+import logoSrc from '../../images/logos/t446-color.svg';
 
 // const _ = require("lodash");
 
@@ -31,6 +31,8 @@ const Header = ({ settings, menuActive, handleToggleMenu }) => {
   return (
     <div className={`${styles.root} ${isScrolled ? styles.isScrolled : ''}`}>
       <Container className={styles.headerContainer}>
+        <div className={styles.headerRow}>
+
         <IconButton
           edge="start"
           color="inherit"
@@ -56,6 +58,7 @@ const Header = ({ settings, menuActive, handleToggleMenu }) => {
         >
           Login
         </Button>
+        </div>
       </Container>
     </div>
   );

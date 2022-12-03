@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Container, Button } from "@material-ui/core";
+import { Grid, Container, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import css from "../../css/modules/pageBuilderBlocks/Gallery.module.scss";
 
